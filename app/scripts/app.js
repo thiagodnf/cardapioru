@@ -14,16 +14,8 @@ define(['jquery','underscore','backbone','router','bootstrap','spin','jqueryspin
     });
 
     $("#loading").spin().hide();
-    //$(document).ajaxStart(function(){console.log("start"); $(this).fadeIn(); });
-    //$(document).ajaxComplete(function(){ console.log("stop");$(this).fadeOut(); });
-
-    $( document ).ajaxStart(function() {
-      $("#loading").show();
-    });
-
-    $( document ).ajaxComplete(function() {
-      $("#loading").hide();
-    });
+    $( document ).ajaxStart(function() { $("#loading").show(); });
+    $( document ).ajaxComplete(function() { $("#loading").hide(); });
 
 		// Pass in our Router module and call it's initialize function
     Router.initialize();    	      
