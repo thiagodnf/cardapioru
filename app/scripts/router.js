@@ -9,6 +9,8 @@ define([
   'views/comments',
   'views/about',  
 ], function($, _, Backbone, HomeView, MenuView, AllView, CommentsView, AboutView) {
+
+  var title = 'Cardápio RU';
   
   var AppRouter = Backbone.Router.extend({
     routes: { // Define some URL routes      
@@ -25,26 +27,31 @@ define([
     var app_router = new AppRouter;
 
     app_router.on('route:showAbout', function(){
+      document.title = "Sobre" + " | " + title;
       var view = new AboutView();
       view.render();        
     });
 
     app_router.on('route:showMenu', function(id){
+      document.title = "Cardápio" + " | " + title;
       var view = new MenuView();
       view.render(id);        
     });
 
     app_router.on('route:showAll', function(id){
+      document.title = "Todos os Cardápios" + " | " + title;
       var view = new AllView();
       view.render();        
     });
 
     app_router.on('route:showComments', function(){
+      document.title = "Comentários" + " | " + title;
       var view = new CommentsView();
       view.render();        
     });
     
     app_router.on('route:defaultAction', function (actions) {
+      document.title = "Inicio" + " | " + title;
       var view = new HomeView();
       view.render();
     });
