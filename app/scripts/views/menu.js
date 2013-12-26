@@ -14,7 +14,8 @@ define([
         template: JST['app/scripts/templates/menu.ejs'],
         template404: JST['app/scripts/templates/menu_404.ejs'],
         render: function (id) {
-            $('body').removeClass('bs-docs-home');
+            id = _.escape(id);
+            
             $('.nav li').removeClass('active');
             $('#all').addClass('active');
 
@@ -30,8 +31,11 @@ define([
                         that.$el.html(that.template(result));
                     }
                 },
+                error: function(result){
+                    that.$el.html(that.template404());
+                },
                 complete: function(msg){
-                    //$('#loading').css({display:"none"});
+                    $('body').removeClass('bs-docs-home');
                 }
             });
         }
