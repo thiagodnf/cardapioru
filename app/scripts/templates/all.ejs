@@ -1,0 +1,14 @@
+<div class="container section">
+    <p>Veja nessa página todos os cardápios disponíveis.</p>
+    <br>
+    <% Object.getOwnPropertyNames(data).forEach(function(val, idx, array) { %>
+        <p><strong><%= val %></strong></p>
+	    <hr>
+	    <ul>
+	    	<% data[val].forEach(function(item) { %>
+	            <li><a href="#menu/<%= item.restaurant_id %>"><%= item.name %></a></li>
+	        <% }); %>
+	   	</ul>
+	   	<br>
+   	<% }); %>
+</div>
