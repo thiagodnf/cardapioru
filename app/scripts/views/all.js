@@ -12,6 +12,7 @@ define([
     var MenusView = Backbone.View.extend({
     	el: $("#page"),
         template: JST['app/scripts/templates/all.ejs'],
+        templateError: JST['app/scripts/templates/error.ejs'],
         render: function () {
             $('.nav li').removeClass('active');
             $('#all').addClass('active');
@@ -33,6 +34,9 @@ define([
                     });
                     
                     that.$el.html(that.template({data: array}));
+                },
+                error: function(x, status, error){
+                    that.$el.html(that.templateError({data: x}));
                 },
                 complete: function(msg){
                     $('body').removeClass('bs-docs-home');

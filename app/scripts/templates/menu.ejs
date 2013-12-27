@@ -1,135 +1,144 @@
-<div class="sec-nav-bar">
+<% if( typeof rows === 'undefined'){ %>
+    <div class="container section">
+        <h1>:-( Nenhum cardápio foi encontrado</h1>
+        <p class="lead">Por favor, verifique novamente o cardápio que você escolheu</p>
+        <p><a href="#all">Clique aqui</a> para ver todos os cardapios disponíveis.</p>
+    </div>
+    <%= window.rows %>
+<% } else { %>
+    
+    <div class="sec-nav-bar">
+        <div class="container">
+            <span>Você está vendo:</span>
+            <span class="text-primary"><strong><%= rows[0][2] %></strong></span>
+        </div>
+    </div>
     <div class="container">
-        <span>Você está vendo:</span>
-        <span class="text-primary"><strong><%= rows[0][2] %></strong></span>
-    </div>
-</div>
-<div class="container">
-    <div class="row section">
-        <div class="col-md-2">
-            <div class="menu">
-                <% var pos = rows[0] %>
-                <% if(pos === undefined){ %>
-                    <p class="text-primary text-center"><strong>Data não disponível</strong></p>
-                    <ul>
-                        <li>Cardápio não disponível</li>                            
-                    </ul>
-                <% } else { %>                    
-                    <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
-                    <% var itens = pos[3].split(";"); %>
-                    <ul>
-                        <% itens.forEach(function(item) { %>
-                            <li><%= item %></li>
-                        <% }); %>
-                    </ul>                    
-                <% } %>
+        <div class="row section">
+            <div class="col-md-2">
+                <div class="menu">
+                    <% var pos = rows[0] %>
+                    <% if(pos === undefined){ %>
+                        <p class="text-primary text-center"><strong>Data não disponível</strong></p>
+                        <ul>
+                            <li>Cardápio não disponível</li>                            
+                        </ul>
+                    <% } else { %>                    
+                        <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
+                        <% var itens = pos[3].split(";"); %>
+                        <ul>
+                            <% itens.forEach(function(item) { %>
+                                <li><%= item %></li>
+                            <% }); %>
+                        </ul>                    
+                    <% } %>
+                </div>
             </div>
+            <div class="col-md-2">
+                <div class="menu">
+                    <% var pos = rows[1] %>
+                    <% if(pos === undefined){ %>
+                        <p class="text-primary text-center"><strong>Data não disponível</strong></p>
+                        <ul>
+                            <li>Cardápio não disponível</li>                            
+                        </ul>
+                    <% } else { %>                    
+                        <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
+                        <% var itens = pos[3].split(";"); %>
+                        <ul>
+                            <% itens.forEach(function(item) { %>
+                                <li><%= item %></li>
+                            <% }); %>
+                        </ul>                    
+                    <% } %>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="menu">
+                    <% var pos = rows[2] %>
+                    <% if(pos === undefined){ %>
+                        <p class="text-primary text-center"><strong>Data não disponível</strong></p>
+                        <ul>
+                            <li>Cardápio não disponível</li>                            
+                        </ul>
+                    <% } else { %>                    
+                        <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
+                        <% var itens = pos[3].split(";"); %>
+                        <ul>
+                            <% itens.forEach(function(item) { %>
+                                <li><%= item %></li>
+                            <% }); %>
+                        </ul>                    
+                    <% } %>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="menu">
+                    <% var pos = rows[3] %>
+                    <% if(pos === undefined){ %>
+                        <p class="text-primary text-center"><strong>Data não disponível</strong></p>
+                        <ul>
+                            <li>Cardápio não disponível</li>                            
+                        </ul>
+                    <% } else { %>                    
+                        <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
+                        <% var itens = pos[3].split(";"); %>
+                        <ul>
+                            <% itens.forEach(function(item) { %>
+                                <li><%= item %></li>
+                            <% }); %>
+                        </ul>                    
+                    <% } %>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="menu">
+                    <% var pos = rows[4] %>
+                    <% if(pos === undefined){ %>
+                        <p class="text-primary text-center"><strong>Data não disponível</strong></p>
+                        <ul>
+                            <li>Cardápio não disponível</li>                            
+                        </ul>
+                    <% } else { %>                    
+                        <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
+                        <% var itens = pos[3].split(";"); %>
+                        <ul>
+                            <% itens.forEach(function(item) { %>
+                                <li><%= item %></li>
+                            <% }); %>
+                        </ul>                    
+                    <% } %>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="menu">
+                    <% var pos = rows[5] %>
+                    <% if(pos === undefined){ %>
+                        <p class="text-primary text-center"><strong>Data não disponível</strong></p>
+                        <ul>
+                            <li>Cardápio não disponível</li>                            
+                        </ul>
+                    <% } else { %>                    
+                        <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
+                        <% var itens = pos[3].split(";"); %>
+                        <ul>
+                            <% itens.forEach(function(item) { %>
+                                <li><%= item %></li>
+                            <% }); %>
+                        </ul>                    
+                    <% } %>
+                </div>
+            </div>               
         </div>
-        <div class="col-md-2">
-            <div class="menu">
-                <% var pos = rows[1] %>
-                <% if(pos === undefined){ %>
-                    <p class="text-primary text-center"><strong>Data não disponível</strong></p>
-                    <ul>
-                        <li>Cardápio não disponível</li>                            
-                    </ul>
-                <% } else { %>                    
-                    <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
-                    <% var itens = pos[3].split(";"); %>
-                    <ul>
-                        <% itens.forEach(function(item) { %>
-                            <li><%= item %></li>
-                        <% }); %>
-                    </ul>                    
-                <% } %>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="menu">
-                <% var pos = rows[2] %>
-                <% if(pos === undefined){ %>
-                    <p class="text-primary text-center"><strong>Data não disponível</strong></p>
-                    <ul>
-                        <li>Cardápio não disponível</li>                            
-                    </ul>
-                <% } else { %>                    
-                    <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
-                    <% var itens = pos[3].split(";"); %>
-                    <ul>
-                        <% itens.forEach(function(item) { %>
-                            <li><%= item %></li>
-                        <% }); %>
-                    </ul>                    
-                <% } %>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="menu">
-                <% var pos = rows[3] %>
-                <% if(pos === undefined){ %>
-                    <p class="text-primary text-center"><strong>Data não disponível</strong></p>
-                    <ul>
-                        <li>Cardápio não disponível</li>                            
-                    </ul>
-                <% } else { %>                    
-                    <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
-                    <% var itens = pos[3].split(";"); %>
-                    <ul>
-                        <% itens.forEach(function(item) { %>
-                            <li><%= item %></li>
-                        <% }); %>
-                    </ul>                    
-                <% } %>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="menu">
-                <% var pos = rows[4] %>
-                <% if(pos === undefined){ %>
-                    <p class="text-primary text-center"><strong>Data não disponível</strong></p>
-                    <ul>
-                        <li>Cardápio não disponível</li>                            
-                    </ul>
-                <% } else { %>                    
-                    <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
-                    <% var itens = pos[3].split(";"); %>
-                    <ul>
-                        <% itens.forEach(function(item) { %>
-                            <li><%= item %></li>
-                        <% }); %>
-                    </ul>                    
-                <% } %>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="menu">
-                <% var pos = rows[5] %>
-                <% if(pos === undefined){ %>
-                    <p class="text-primary text-center"><strong>Data não disponível</strong></p>
-                    <ul>
-                        <li>Cardápio não disponível</li>                            
-                    </ul>
-                <% } else { %>                    
-                    <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
-                    <% var itens = pos[3].split(";"); %>
-                    <ul>
-                        <% itens.forEach(function(item) { %>
-                            <li><%= item %></li>
-                        <% }); %>
-                    </ul>                    
-                <% } %>
-            </div>
-        </div>               
-    </div>
 
-    <div class="section">
-        <p><strong>Notícias</strong></p>
-        Nenhuma notícia foi encontrada.
-    </div>
+        <div class="section">
+            <p><strong>Notícias</strong></p>
+            Nenhuma notícia foi encontrada.
+        </div>
 
-    <div class="section">
-        <p><strong>Informações</strong></p>
-        Nenhuma informação foi encontrada.
+        <div class="section">
+            <p><strong>Informações</strong></p>
+            Nenhuma informação foi encontrada.
+        </div>
     </div>
-</div>
-
+<% } %>
