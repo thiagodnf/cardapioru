@@ -1,3 +1,13 @@
+<%
+    var week = new Array(7);
+    week[0] = 'Segunda-Feira';
+    week[1] = 'Terça-Feira';
+    week[2] = 'Quarta-Feira';
+    week[3] = 'Quinta-Feira';
+    week[4] = 'Sexta-Feira';
+    week[5] = 'Sábado';
+    week[6] = 'Domingo';
+%>
 <% if( typeof rows === 'undefined'){ %>
     <div class="container section">
         <h1>:-( Nenhum cardápio foi encontrado</h1>
@@ -6,7 +16,6 @@
     </div>
     <%= window.rows %>
 <% } else { %>
-    
     <div class="sec-nav-bar">
         <div class="container">
             <span>Você está vendo:</span>
@@ -24,7 +33,10 @@
                             <li>Cardápio não disponível</li>                            
                         </ul>
                     <% } else { %>                    
-                        <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
+                        <% var date = new Date(pos[5]); %>
+                        <% var d = (date.getDate()+1)+'-'+(date.getMonth()+1)+'-'+date.getFullYear() %>
+                        <p class="text-primary text-center"><strong><%= week[date.getDay()] %></strong></p>
+                        <p class="text-primary text-center"><strong><%= d  %></strong></p>
                         <% var itens = pos[3].split(";"); %>
                         <ul>
                             <% itens.forEach(function(item) { %>
@@ -43,7 +55,10 @@
                             <li>Cardápio não disponível</li>                            
                         </ul>
                     <% } else { %>                    
-                        <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
+                        <% var date = new Date(pos[5]); %>
+                        <% var d = (date.getDate()+1)+'-'+(date.getMonth()+1)+'-'+date.getFullYear() %>
+                        <p class="text-primary text-center"><strong><%= week[date.getDay()] %></strong></p>
+                        <p class="text-primary text-center"><strong><%= d  %></strong></p>
                         <% var itens = pos[3].split(";"); %>
                         <ul>
                             <% itens.forEach(function(item) { %>
@@ -61,8 +76,11 @@
                         <ul>
                             <li>Cardápio não disponível</li>                            
                         </ul>
-                    <% } else { %>                    
-                        <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
+                    <% } else { %>   
+                        <% var date = new Date(pos[5]); %>
+                        <% var d = (date.getDate()+1)+'-'+(date.getMonth()+1)+'-'+date.getFullYear() %>
+                        <p class="text-primary text-center"><strong><%= week[date.getDay()] %></strong></p>
+                        <p class="text-primary text-center"><strong><%= d  %></strong></p>
                         <% var itens = pos[3].split(";"); %>
                         <ul>
                             <% itens.forEach(function(item) { %>
@@ -81,7 +99,10 @@
                             <li>Cardápio não disponível</li>                            
                         </ul>
                     <% } else { %>                    
-                        <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
+                        <% var date = new Date(pos[5]); %>
+                        <% var d = (date.getDate()+1)+'-'+(date.getMonth()+1)+'-'+date.getFullYear() %>
+                        <p class="text-primary text-center"><strong><%= week[date.getDay()] %></strong></p>
+                        <p class="text-primary text-center"><strong><%= d  %></strong></p>
                         <% var itens = pos[3].split(";"); %>
                         <ul>
                             <% itens.forEach(function(item) { %>
@@ -100,7 +121,10 @@
                             <li>Cardápio não disponível</li>                            
                         </ul>
                     <% } else { %>                    
-                        <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
+                        <% var date = new Date(pos[5]); %>
+                        <% var d = (date.getDate()+1)+'-'+(date.getMonth()+1)+'-'+date.getFullYear() %>
+                        <p class="text-primary text-center"><strong><%= week[date.getDay()] %></strong></p>
+                        <p class="text-primary text-center"><strong><%= d  %></strong></p>
                         <% var itens = pos[3].split(";"); %>
                         <ul>
                             <% itens.forEach(function(item) { %>
@@ -119,7 +143,10 @@
                             <li>Cardápio não disponível</li>                            
                         </ul>
                     <% } else { %>                    
-                        <p class="text-primary text-center"><strong><%= pos[5] %></strong></p>
+                        <% var date = new Date(pos[5]); %>
+                        <% var d = (date.getDate()+1)+'-'+(date.getMonth()+1)+'-'+date.getFullYear() %>
+                        <p class="text-primary text-center"><strong><%= week[date.getDay()] %></strong></p>
+                        <p class="text-primary text-center"><strong><%= d  %></strong></p>
                         <% var itens = pos[3].split(";"); %>
                         <ul>
                             <% itens.forEach(function(item) { %>

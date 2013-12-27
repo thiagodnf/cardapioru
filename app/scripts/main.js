@@ -25,7 +25,8 @@ require.config({
         bootstrap: '../bower_components/sass-bootstrap/dist/js/bootstrap',
         typeahead: '../bower_components/typeahead.js/dist/typeahead',
         spin: '../bower_components/spin.js/dist/spin',
-        jqueryspin: '../bower_components/spin.js/jquery.spin'
+        jqueryspin: '../bower_components/spin.js/jquery.spin',
+        util: 'util'
     }
 });
 

@@ -5,8 +5,9 @@ define([
     'underscore',
     'backbone',
     'templates',
-    'models/menu'
-], function ($, _, Backbone, JST,MenuModel) {
+    'models/menu',
+    'util'
+], function ($, _, Backbone, JST,MenuModel,u) {
     'use strict';
 
     var MenuView = Backbone.View.extend({

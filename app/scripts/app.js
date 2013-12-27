@@ -16,21 +16,7 @@ define(['jquery','underscore','backbone','router','bootstrap','spin','jqueryspin
     $("#loading").spin().hide();
     $( document ).ajaxStart(function() { $("#loading").show(); });
     $( document ).ajaxComplete(function() { $("#loading").hide(); });
-    //setup ajax error handling
-    $.ajaxError = function(x, status, error){
-      console.log(x);
-      console.log(status);
-      console.log(error);
-      /*if (x.status == 403) {
-        console
-                //window.location.href ="/Account/Login";
-            }
-            else {
-                alert("An error occurred: " + status + "nError: " + error);
-            }
-        }*/
-    };
-
+    
 		// Pass in our Router module and call it's initialize function
     Router.initialize();    	      
   };
