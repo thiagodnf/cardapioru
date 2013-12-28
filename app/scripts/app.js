@@ -8,16 +8,13 @@ define([
   'router',
   'bootstrap',
   'spin',
-  'jqueryspin',
-  'util'
-], function($, _, Backbone, Router,Bootstrap,Spin,jQSpin,u){
+  'jqueryspin'
+], function($, _, Backbone, Router,Bootstrap,Spin,jQSpin){
 
   //Key to Google Fusion Table
   window.key = "AIzaSyBD5rcWj2_fuugaOICorW1fVOrEFSErO4g"
 
   var initialize = function(){
-
-    u.social()
 
     //All request by Google Fusion Table
     $.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
@@ -26,8 +23,8 @@ define([
     });
 
     $("#loading").spin().hide();
-    $( document ).ajaxStart(function() { console.log("start"); $("#loading").show(); });
-    $( document ).ajaxStop(function() { console.log("stop"); $("#loading").hide(); });
+    $( document ).ajaxStart(function() { $("#loading").show(); });
+    $( document ).ajaxStop(function() { $("#loading").hide(); });
     
 		// Pass in our Router module and call it's initialize function
     Router.initialize();    	      

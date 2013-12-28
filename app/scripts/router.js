@@ -15,6 +15,7 @@ define([
   var AppRouter = Backbone.Router.extend({
     routes: { // Define some URL routes      
       'about': 'showAbout',
+      'home': 'showHome',
       'comments': 'showComments',
       'menu/:id': 'showMenu',
       'all': 'showAll',
@@ -48,6 +49,12 @@ define([
       document.title = "Comentários" + " | " + title;
       var view = new CommentsView();
       view.render();        
+    });
+
+    app_router.on('route:showHome', function(){
+       document.title = "Inicio" + " | " + title;
+      var view = new HomeView();
+      view.render();
     });
     
     app_router.on('route:defaultAction', function (actions) {
