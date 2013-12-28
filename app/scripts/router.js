@@ -20,7 +20,7 @@ define([
       'menu/:id': 'showMenu',
       'all': 'showAll',
       '*actions': 'defaultAction' // Default
-    }
+    }   
   });
   
   var initialize = function(){
@@ -63,9 +63,22 @@ define([
       view.render();
     });
 
-    Backbone.history.start();
+    Backbone.history.bind('all',function(){
+        var url = Backbone.history.getFragment();
+
+        if (!/^\//.test(url) && url != ""){
+          url = "/" + url;
+        }
+       
+        ga('send', {
+            'hitType': 'pageview',
+            'page': url
+        }); 
+    });
+
+    Backbone.history.start();   
   };
   return { 
-    initialize: initialize
+    initialize: initialize    
   };
 });
