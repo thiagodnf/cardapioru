@@ -26,6 +26,7 @@ require.config({
         typeahead: '../bower_components/typeahead.js/dist/typeahead',
         spin: '../bower_components/spin.js/dist/spin',
         jqueryspin: '../bower_components/spin.js/jquery.spin',
+        moment: '../bower_components/momentjs/moment',
         util: 'util'
     }
 });

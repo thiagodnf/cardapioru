@@ -1,161 +1,108 @@
-<%
-    var week = new Array(7);
-    week[0] = 'Segunda-Feira';
-    week[1] = 'Terça-Feira';
-    week[2] = 'Quarta-Feira';
-    week[3] = 'Quinta-Feira';
-    week[4] = 'Sexta-Feira';
-    week[5] = 'Sábado';
-    week[6] = 'Domingo';
-%>
-<% if( typeof rows === 'undefined'){ %>
+<% if( ies === undefined || ies === null){ %>
     <div class="container section">
         <h1>:-( Nenhum cardápio foi encontrado</h1>
         <p class="lead">Por favor, verifique novamente o cardápio que você escolheu</p>
         <p><a href="#all">Clique aqui</a> para ver todos os cardapios disponíveis.</p>
     </div>
-    <%= window.rows %>
 <% } else { %>
     <div class="sec-nav-bar">
         <div class="container">
             <span>Você está vendo:</span>
-            <span class="text-primary"><strong><%= rows[0][2] %></strong></span>
+            <span class="text-primary"><strong><%= ies %></strong></span>
         </div>
     </div>
     <div class="container">
         <div class="row section">
             <div class="col-md-2">
-                <div class="menu">
-                    <% var pos = rows[0] %>
-                    <% if(pos === undefined){ %>
-                        <p class="text-primary text-center"><strong>Data não disponível</strong></p>
-                        <ul>
-                            <li>Cardápio não disponível</li>                            
-                        </ul>
-                    <% } else { %>                    
-                        <% var date = new Date(pos[5]); %>
-                        <% var d = (date.getDate()+1)+'-'+(date.getMonth()+1)+'-'+date.getFullYear() %>
-                        <p class="text-primary text-center"><strong><%= week[date.getDay()] %></strong></p>
-                        <p class="text-primary text-center"><strong><%= d  %></strong></p>
-                        <% var itens = pos[3].split(";"); %>
-                        <ul>
-                            <% itens.forEach(function(item) { %>
-                                <li><%= item %></li>
-                            <% }); %>
-                        </ul>                    
-                    <% } %>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <center>
+                            <p><strong>Segunda-Feira</strong></p>
+                            <p><small><%= seg.date %></small></p>
+                        </center>
+                    </div>
+                    <ul class="list-group">
+                        <% seg.itens.forEach(function(item) { %>
+                            <li class="list-group-item"><small><%= item %></small></li>
+                        <% }); %>
+                    </ul>                    
                 </div>
             </div>
             <div class="col-md-2">
-                <div class="menu">
-                    <% var pos = rows[1] %>
-                    <% if(pos === undefined){ %>
-                        <p class="text-primary text-center"><strong>Data não disponível</strong></p>
-                        <ul>
-                            <li>Cardápio não disponível</li>                            
-                        </ul>
-                    <% } else { %>                    
-                        <% var date = new Date(pos[5]); %>
-                        <% var d = (date.getDate()+1)+'-'+(date.getMonth()+1)+'-'+date.getFullYear() %>
-                        <p class="text-primary text-center"><strong><%= week[date.getDay()] %></strong></p>
-                        <p class="text-primary text-center"><strong><%= d  %></strong></p>
-                        <% var itens = pos[3].split(";"); %>
-                        <ul>
-                            <% itens.forEach(function(item) { %>
-                                <li><%= item %></li>
-                            <% }); %>
-                        </ul>                    
-                    <% } %>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <center>
+                            <p><strong>Terça-Feira</strong></p>
+                            <p><small><%= ter.date %></small></p>
+                        </center>
+                    </div>
+                    <ul class="list-group">
+                        <% ter.itens.forEach(function(item) { %>
+                            <li class="list-group-item"><small><%= item %></small></li>
+                        <% }); %>
+                    </ul>                    
                 </div>
             </div>
             <div class="col-md-2">
-                <div class="menu">
-                    <% var pos = rows[2] %>
-                    <% if(pos === undefined){ %>
-                        <p class="text-primary text-center"><strong>Data não disponível</strong></p>
-                        <ul>
-                            <li>Cardápio não disponível</li>                            
-                        </ul>
-                    <% } else { %>   
-                        <% var date = new Date(pos[5]); %>
-                        <% var d = (date.getDate()+1)+'-'+(date.getMonth()+1)+'-'+date.getFullYear() %>
-                        <p class="text-primary text-center"><strong><%= week[date.getDay()] %></strong></p>
-                        <p class="text-primary text-center"><strong><%= d  %></strong></p>
-                        <% var itens = pos[3].split(";"); %>
-                        <ul>
-                            <% itens.forEach(function(item) { %>
-                                <li><%= item %></li>
-                            <% }); %>
-                        </ul>                    
-                    <% } %>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <center>
+                            <p><strong>Quarta-Feira</strong></p>
+                            <p><small><%= qua.date %></small></p>
+                        </center>
+                    </div>
+                    <ul class="list-group">
+                        <% qua.itens.forEach(function(item) { %>
+                            <li class="list-group-item"><small><%= item %></small></li>
+                        <% }); %>
+                    </ul>                    
                 </div>
             </div>
             <div class="col-md-2">
-                <div class="menu">
-                    <% var pos = rows[3] %>
-                    <% if(pos === undefined){ %>
-                        <p class="text-primary text-center"><strong>Data não disponível</strong></p>
-                        <ul>
-                            <li>Cardápio não disponível</li>                            
-                        </ul>
-                    <% } else { %>                    
-                        <% var date = new Date(pos[5]); %>
-                        <% var d = (date.getDate()+1)+'-'+(date.getMonth()+1)+'-'+date.getFullYear() %>
-                        <p class="text-primary text-center"><strong><%= week[date.getDay()] %></strong></p>
-                        <p class="text-primary text-center"><strong><%= d  %></strong></p>
-                        <% var itens = pos[3].split(";"); %>
-                        <ul>
-                            <% itens.forEach(function(item) { %>
-                                <li><%= item %></li>
-                            <% }); %>
-                        </ul>                    
-                    <% } %>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <center>
+                            <p><strong>Quinta-Feira</strong></p>
+                            <p><small><%= qui.date %></small></p>
+                        </center>
+                    </div>
+                    <ul class="list-group">
+                        <% qui.itens.forEach(function(item) { %>
+                            <li class="list-group-item"><small><%= item %></small></li>
+                        <% }); %>
+                    </ul>                    
                 </div>
             </div>
             <div class="col-md-2">
-                <div class="menu">
-                    <% var pos = rows[4] %>
-                    <% if(pos === undefined){ %>
-                        <p class="text-primary text-center"><strong>Data não disponível</strong></p>
-                        <ul>
-                            <li>Cardápio não disponível</li>                            
-                        </ul>
-                    <% } else { %>                    
-                        <% var date = new Date(pos[5]); %>
-                        <% var d = (date.getDate()+1)+'-'+(date.getMonth()+1)+'-'+date.getFullYear() %>
-                        <p class="text-primary text-center"><strong><%= week[date.getDay()] %></strong></p>
-                        <p class="text-primary text-center"><strong><%= d  %></strong></p>
-                        <% var itens = pos[3].split(";"); %>
-                        <ul>
-                            <% itens.forEach(function(item) { %>
-                                <li><%= item %></li>
-                            <% }); %>
-                        </ul>                    
-                    <% } %>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <center>
+                            <p><strong>Sexta-Feira</strong></p>
+                            <p><small><%= sex.date %></small></p>
+                        </center>
+                    </div>
+                    <ul class="list-group">
+                        <% sex.itens.forEach(function(item) { %>
+                            <li class="list-group-item"><small><%= item %></small></li>
+                        <% }); %>
+                    </ul>                    
                 </div>
             </div>
             <div class="col-md-2">
-                <div class="menu">
-                    <% var pos = rows[5] %>
-                    <% if(pos === undefined){ %>
-                        <p class="text-primary text-center"><strong>Data não disponível</strong></p>
-                        <ul>
-                            <li>Cardápio não disponível</li>                            
-                        </ul>
-                    <% } else { %>                    
-                        <% var date = new Date(pos[5]); %>
-                        <% var d = (date.getDate()+1)+'-'+(date.getMonth()+1)+'-'+date.getFullYear() %>
-                        <p class="text-primary text-center"><strong><%= week[date.getDay()] %></strong></p>
-                        <p class="text-primary text-center"><strong><%= d  %></strong></p>
-                        <% var itens = pos[3].split(";"); %>
-                        <ul>
-                            <% itens.forEach(function(item) { %>
-                                <li><%= item %></li>
-                            <% }); %>
-                        </ul>                    
-                    <% } %>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <center>
+                            <p><strong>Sábado</strong></p>
+                            <p><small><%= sab.date %></small></p>
+                        </center>
+                    </div>
+                    <ul class="list-group">
+                        <% sab.itens.forEach(function(item) { %>
+                            <li class="list-group-item"><small><%= item %></small></li>
+                        <% }); %>
+                    </ul>                    
                 </div>
-            </div>               
+            </div>
         </div>
 
         <div class="section">
