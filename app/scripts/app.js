@@ -26,8 +26,8 @@ define([
     });
 
     $("#loading").spin().hide();
-    $( document ).ajaxStart(function() { $("#loading").show(); });
-    $( document ).ajaxComplete(function() { $("#loading").hide(); });
+    $( document ).ajaxStart(function() { console.log("start"); $("#loading").show(); });
+    $( document ).ajaxStop(function() { console.log("stop"); $("#loading").hide(); });
     
 		// Pass in our Router module and call it's initialize function
     Router.initialize();    	      
