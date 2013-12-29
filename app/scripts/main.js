@@ -27,6 +27,7 @@ require.config({
         spin: '../bower_components/spin.js/dist/spin',
         jqueryspin: '../bower_components/spin.js/jquery.spin',
         moment: '../bower_components/momentjs/moment',
+        momentptbr: '../bower_components/momentjs/lang/pt-br',
         util: 'util'
     }
 });

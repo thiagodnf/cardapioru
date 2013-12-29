@@ -7,7 +7,8 @@ define([
     'templates',
     'models/menu',
     'util',
-    'moment'
+    'moment',
+    'momentptbr'
 ], function ($, _, Backbone, JST,MenuModel,u,moment) {
     'use strict';
 
@@ -57,13 +58,15 @@ define([
                 });
 
                 rowsItensMenu.forEach(function(row){
+                    moment().lang("pt-br");
+
                     var d = new Date(row[1]);
                     var mom = moment(d);
                     var itens = row[2].split(";");
                     
                     if(itens.length === 1 && itens[0] === "" ) itens = ['Cardápio não disponível'];
 
-                    var menu_item = {date: mom.format('DD/MM/YYYY'), itens: itens};
+                    var menu_item = {date: mom.format('DD [de] MMMM'), itens: itens};
                     
                     if(d.getDay() == 0) menu.seg = menu_item;
                     if(d.getDay() == 1) menu.ter = menu_item;
