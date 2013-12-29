@@ -75,6 +75,9 @@ define([
                     if(d.getDay() == 4) menu.sex = menu_item;
                     if(d.getDay() == 5) menu.sab = menu_item;                    
                 });
+
+                if(menu.ies !== null) document.title = menu.ies + " | Cardápio RU";
+
                 that.$el.html(that.template(menu));
             }).fail(function (x, status, error){
                 that.$el.html(that.templateError({data: x}));                
