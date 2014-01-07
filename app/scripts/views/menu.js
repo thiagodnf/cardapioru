@@ -72,12 +72,20 @@ define([
                     if(mom.day() == 3) menu.qua = menu_item;
                     if(mom.day() == 4) menu.qui = menu_item;
                     if(mom.day() == 5) menu.sex = menu_item;
-                    if(mom.day() == 6) menu.sab = menu_item;                    
+                    if(mom.day() == 6) menu.sab = menu_item;                                        
                 });
 
                 if(menu.ies !== null) document.title = menu.ies + " | Cardápio RU";
 
                 that.$el.html(that.template(menu));
+
+                //Colorir a cor do cardápio dependendo do dia atual
+                if(moment().day() == 1) $("#segunda").removeClass("panel-primary").addClass('panel-success');
+                if(moment().day() == 2) $("#terca").removeClass("panel-primary").addClass('panel-success');
+                if(moment().day() == 3) $("#quarta").removeClass("panel-primary").addClass('panel-success');
+                if(moment().day() == 4) $("#quinta").removeClass("panel-primary").addClass('panel-success');
+                if(moment().day() == 5) $("#sexta").removeClass("panel-primary").addClass('panel-success');
+                if(moment().day() == 6) $("#sabado").removeClass("panel-primary").addClass('panel-success'); 
             }).fail(function (x, status, error){
                 that.$el.html(that.templateError({data: x}));                
             }).always(function(){
