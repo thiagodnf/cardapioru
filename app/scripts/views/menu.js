@@ -60,20 +60,19 @@ define([
                 rowsItensMenu.forEach(function(row){
                     moment().lang("pt-br");
 
-                    var d = new Date(row[1]);
-                    var mom = moment(d);
+                    var mom = moment(row[1]);
                     var itens = row[2].split(";");
                     
                     if(itens.length === 1 && itens[0] === "" ) itens = ['Cardápio não disponível'];
 
                     var menu_item = {date: mom.format('DD [de] MMMM'), itens: itens};
                     
-                    if(d.getDay() == 0) menu.seg = menu_item;
-                    if(d.getDay() == 1) menu.ter = menu_item;
-                    if(d.getDay() == 2) menu.qua = menu_item;
-                    if(d.getDay() == 3) menu.qui = menu_item;
-                    if(d.getDay() == 4) menu.sex = menu_item;
-                    if(d.getDay() == 5) menu.sab = menu_item;                    
+                    if(mom.day() == 1) menu.seg = menu_item;
+                    if(mom.day() == 2) menu.ter = menu_item;
+                    if(mom.day() == 3) menu.qua = menu_item;
+                    if(mom.day() == 4) menu.qui = menu_item;
+                    if(mom.day() == 5) menu.sex = menu_item;
+                    if(mom.day() == 6) menu.sab = menu_item;                    
                 });
 
                 if(menu.ies !== null) document.title = menu.ies + " | Cardápio RU";
